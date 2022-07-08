@@ -1,0 +1,4 @@
+﻿  MinimalnaLiczba.cpp
+D:\SDA\Algorytmy\MinimalnaLiczba\MinimalnaLiczba.cpp(14,23): warning C4018: '<': signed/unsigned mismatch
+D:\SDA\Algorytmy\MinimalnaLiczba\MinimalnaLiczba.cpp(27,27): warning C4018: '<': signed/unsigned mismatch
+  MinimalnaLiczba.vcxproj -> D:\SDA\Algorytmy\Euklides\x64\Debug\MinimalnaLiczba.exe
