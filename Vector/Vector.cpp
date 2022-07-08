@@ -110,6 +110,12 @@ void Vector::push_back(const int& value)//dodaje tylko jeden element
 		
 }
 
+void Vector::pop_back()
+{
+	_data[_size] = _data[_size-1];
+	_size--;
+}
+
 int& Vector::operator[](unsigned int position)
 {
 	if (position > _size)

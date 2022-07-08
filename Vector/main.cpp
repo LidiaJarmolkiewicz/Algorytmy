@@ -40,5 +40,11 @@ int main()
     {
         std::cout << "[" << i << "]" << test[i] << std::endl;
     }
+    std::cout << "Pop_back - usuwam ostatni element" << std::endl;
+    test.pop_back();
+    for (int i = 0; i < test.size(); ++i)
+    {
+        std::cout << "[" << i << "]" << test[i] << std::endl;
+    }
 }
 
