@@ -1,0 +1,5 @@
+﻿  main.cpp
+D:\SDA\Algorytmy\Vector\main.cpp(26,23): warning C4018: '<': signed/unsigned mismatch
+D:\SDA\Algorytmy\Vector\main.cpp(33,23): warning C4018: '<': signed/unsigned mismatch
+D:\SDA\Algorytmy\Vector\main.cpp(39,23): warning C4018: '<': signed/unsigned mismatch
+  Vector.vcxproj -> D:\SDA\Algorytmy\Vector\x64\Debug\Vector.exe
