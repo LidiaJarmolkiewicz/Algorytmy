@@ -1,0 +1,5 @@
+﻿  BubbleSort.cpp
+D:\SDA\Algorytmy\BubbleSort\BubbleSort.cpp(9,24): warning C4018: '<': signed/unsigned mismatch
+D:\SDA\Algorytmy\BubbleSort\BubbleSort.cpp(25,23): warning C4018: '<': signed/unsigned mismatch
+D:\SDA\Algorytmy\BubbleSort\BubbleSort.cpp(27,27): warning C4018: '<': signed/unsigned mismatch
+  BubbleSort.vcxproj -> D:\SDA\Algorytmy\BubbleSort\x64\Debug\BubbleSort.exe
