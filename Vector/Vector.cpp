@@ -33,7 +33,7 @@ Vector::~Vector()
 	if (_data != nullptr)
 	{
 	delete[]_data;
-	_data = nullptr;
+	//_data = nullptr;
 	}
 	
 }
@@ -46,7 +46,7 @@ void Vector::reserve(unsigned int capacity)
 		data[i] = _data[i];
 	}
 	_capacity = capacity;
-	delete[]_data;//zwolnij star¹ pamiêæ
+	delete[] _data;//zwolnij star¹ pamiêæ
 	_data = data;
 	//nadpisz wskaznik zeby wektor przechowywa³ now¹ pamiec
 }
@@ -67,30 +67,34 @@ bool Vector::empty() const
 		
 }
 
-void Vector::insert(int value, unsigned int position)
+void Vector::insert(int value, unsigned int index)
 {
 	if (_capacity <= _size)
 	{
 		reserve((_capacity * 2) + 1);
 	}
 		
-	for (int i = _size; i > position; --i)
+	for (int i = _size; i > index; --i)
 	{
 
 		_data[i] = _data[i - 1];
 	}
 
-	_data[position] = value;
-	_size++;
+	_data[index] = value;
+	++_size;
 }
 
-void Vector::remove(unsigned int position)
+void Vector::remove(unsigned int index)
 {
-	for (int i = position; i < _size; ++i)
+	if (index > _size)
+	{
+		//wyjatek
+	}
+	for (int i = index; i < _size; ++i)
 	{
 		_data[i] = _data[i + 1];
 	}
-	_size--;
+	--_size;
 }
 
 void Vector::clear()
@@ -112,9 +116,37 @@ void Vector::push_back(const int& value)//dodaje tylko jeden element
 
 void Vector::pop_back()
 {
-	_data[_size] = _data[_size-1];
-	_size--;
+	--_size;
 }
+
+void Vector::copyTo(Vector& other, unsigned int index)
+{
+	for (int i = 0; i < other._size; ++i) 
+	{
+		insert(other._data[i], index++);
+
+	}
+}
+
+void Vector::bubbleSort()
+
+	{
+		bool swapped = false;
+		do
+		{
+			swapped = false;
+			for (int i = 0; i < _size - 1; ++i)
+			{
+				if (_data[i] > _data[i + 1])
+				{
+					int x = _data[i];
+					_data[i] = _data[i + 1];
+					_data[i + 1] = x;
+					swapped = true;
+				}
+			}
+		} while (swapped);
+	}
 
 int& Vector::operator[](unsigned int position)
 {

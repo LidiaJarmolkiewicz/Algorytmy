@@ -5,6 +5,7 @@
 int main()
 {
     Vector test;
+    Vector test2;
 
 
     std::cout << "capacity" << test.capacity()<<std::endl;
@@ -46,5 +47,20 @@ int main()
     {
         std::cout << "[" << i << "]" << test[i] << std::endl;
     }
+    test2.push_back(9);
+    test2.push_back(10);
+    test.copyTo(test2, 2);
+    std::cout << "nowy wektor" << std::endl;
+    for (int i = 0; i < test.size(); ++i)
+    {
+        std::cout << "[" << i << "]" << test[i] << std::endl;
+    }
+    test.bubbleSort();
+    std::cout << "sortowanie wektora" << std::endl;
+    for (int i = 0; i < test.size(); ++i)
+    {
+        std::cout << "[" << i << "]" << test[i] << std::endl;
+    }
+
 }
 

@@ -16,11 +16,13 @@ public:
 	unsigned int size() const;
 	bool empty() const;
 
-	void insert(int value, unsigned int position); //pozwala wstawic wartosc do wektora na zadana pozycje
-	void remove(unsigned int position); //usuwa element z wektora
+	void insert(int value, unsigned int index); //pozwala wstawic wartosc do wektora na zadana pozycje
+	void remove(unsigned int index); //usuwa element z wektora
 	void clear(); //usuwa wszystkie elementy zwektora, jednak nie zmniejsza zarezerwowanej pamieci
 	void push_back(const int& value); // odklada element na ostatnie wolne miejsce 
 	void pop_back();//usuwa ostatni element
+	void copyTo(Vector& other, unsigned int index); //skopiuj zawartosc wektora other w podane miejsce,
+	void bubbleSort(); //sortowanie za pomoc¹ algorytmu sortowania babelkowego
 
 	int& operator[](unsigned int position); //operator dostepu do danych na podanej pozycji
 	Vector& operator=(const Vector& other); //to samo co c-tor kopiujacy
