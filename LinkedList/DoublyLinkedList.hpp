@@ -19,7 +19,7 @@ public:
 	void removeValue(int value);
 	void remove(const unsigned int index);
 	void clear();
-
+	void merge(DoublyLinkedList& other, const unsigned int index);
 	int& operator[](const unsigned int index)const;
 	//operator=
 	//merge

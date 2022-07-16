@@ -47,9 +47,18 @@ void DoublyLinkedList::insertFront(int value)
 	Node* newNode = new Node();
 	newNode->data = value;
 	newNode->prev = nullptr;
+	if (_head == nullptr && _tail == nullptr)
+	{
+		newNode->next = nullptr;
+		_head = newNode;
+		_tail = newNode;
+		return;
+	}
+
 	if (_head != nullptr)
 	{
 		_head->prev = newNode;
+		
 	}
 	newNode->next = _head;
 	_head=newNode;
@@ -61,6 +70,13 @@ void DoublyLinkedList::insertBack(int value)
 	Node* newNode = new Node();
 	newNode->data = value;
 	newNode->next = nullptr;
+	if (_head == nullptr && _tail == nullptr)
+	{
+		newNode->prev= nullptr;
+		_head = newNode;
+		_tail = newNode;
+		return;
+	}
 	if (_tail != nullptr)
 	{
 		_tail->next = newNode;
@@ -124,8 +140,8 @@ void DoublyLinkedList::remove(const unsigned int index)
 	}
 	else //jedyny
 	{
-		_head = nullptr;
-		_tail = nullptr;
+		_head= nullptr;
+		_tail= nullptr;
 		delete temp;
 	}
 }
@@ -133,14 +149,39 @@ void DoublyLinkedList::remove(const unsigned int index)
 void DoublyLinkedList::clear()
 {
 	Node* temp = nullptr;
-	while(_head!=nullptr)
+	while (_head != nullptr)
 	{
-	temp = _head->next;
-	delete _head;
-	_head = temp;
+		temp = _head->next;
+		delete _head;
+		_head = temp;
 	}
 	_tail = nullptr;
 }
+
+void DoublyLinkedList::merge(DoublyLinkedList& other, const unsigned int index)
+{
+
+	Node* temp = _head;
+	int currentIndex = 0;
+	while (temp != nullptr && currentIndex != index)
+	{
+		++currentIndex;
+		temp = temp->next;
+	}
+	if (temp != nullptr && temp->next != nullptr)
+	{
+		
+		temp->next->prev = other._tail;
+		other._tail->next = temp->next;
+		temp->next = other._head;
+		other._head->prev = temp;
+		
+	}
+	 other._head=nullptr;
+	 other._tail=nullptr;
+}
+
+
 
 int& DoublyLinkedList::operator[](const unsigned int index) const
 {
