@@ -1,4 +1,5 @@
 #include"Vector.hpp"
+#include<string>
 
 Vector::Vector()
 	:_capacity(0)
@@ -40,6 +41,7 @@ Vector::~Vector()
 
 void Vector::reserve(unsigned int capacity)
 {
+	
 	int* data=new int[capacity];//nowa tablica na elementy
 	for (int i = 0; i < _size; ++i)//skopiuj wszystko
 	{
@@ -73,6 +75,10 @@ void Vector::insert(int value, unsigned int index)
 	{
 		reserve((_capacity * 2) + 1);
 	}
+	if (index > _size)
+	{
+		throw std::string("nie mozna dodac bo indeks poza rozmiarem wektora");
+	}
 		
 	for (int i = _size; i > index; --i)
 	{
@@ -88,7 +94,7 @@ void Vector::remove(unsigned int index)
 {
 	if (index > _size)
 	{
-		//wyjatek
+		throw std::string("nie mozna usunac bo indeks poza rozmiarem wektora");
 	}
 	for (int i = index; i < _size; ++i)
 	{
@@ -152,7 +158,7 @@ int& Vector::operator[](unsigned int position)
 {
 	if (position > _size)
 	{
-		//todo exception
+		//throw std::string("position poza rozmiarem vektora");
 		
 	}
 

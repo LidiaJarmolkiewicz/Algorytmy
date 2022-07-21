@@ -30,13 +30,29 @@ int main()
     }
     std::cout << test.operator[](2) << "to samo co " << test[2] << std::endl;
     std::cout << "Insert - dodaje wartosc 8 na pozycji 1" << std::endl;
-    test.insert(8, 1);
-    for (int i = 0; i < test.size(); ++i)
-    {
-        std::cout << "[" << i << "]" << test[i] << std::endl;
+    try
+    { 
+        test.insert(8, 1);
+        for (int i = 0; i < test.size(); ++i)
+        {
+            std::cout << "[" << i << "]" << test[i] << std::endl;
+        }
     }
+    catch (std::string& error)
+    {
+        std::cout << error << std::endl;
+    }
+   
     std::cout << "Remove - usuwam wartosc 3 na pozycji 3" << std::endl;
-    test.remove(3);
+    try
+    {
+        test.remove(3);
+    }
+    catch (std::string& error)
+    {
+        std::cout << error << std::endl;
+    }
+   
     for (int i = 0; i < test.size(); ++i)
     {
         std::cout << "[" << i << "]" << test[i] << std::endl;
@@ -50,7 +66,7 @@ int main()
     test2.push_back(9);
     test2.push_back(10);
     test.copyTo(test2, 2);
-    std::cout << "nowy wektor" << std::endl;
+    std::cout << "nowy wektor(9,10)" << std::endl;
     for (int i = 0; i < test.size(); ++i)
     {
         std::cout << "[" << i << "]" << test[i] << std::endl;
