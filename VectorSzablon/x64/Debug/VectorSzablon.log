@@ -1,0 +1,13 @@
+﻿  main.cpp
+D:\SDA\Algorytmy\VectorSzablon\VectorSzablon.cpp(78,12): warning C4018: '>': signed/unsigned mismatch
+D:\SDA\Algorytmy\VectorSzablon\VectorSzablon.cpp(73): message : while compiling class template member function 'void VectorS<int>::insert(int,unsigned int)'
+D:\SDA\Algorytmy\VectorSzablon\main.cpp(36): message : see reference to function template instantiation 'void VectorS<int>::insert(int,unsigned int)' being compiled
+D:\SDA\Algorytmy\VectorSzablon\main.cpp(8): message : see reference to class template instantiation 'VectorS<int>' being compiled
+D:\SDA\Algorytmy\VectorSzablon\VectorSzablon.cpp(83,24): warning C4018: '>': signed/unsigned mismatch
+D:\SDA\Algorytmy\VectorSzablon\VectorSzablon.cpp(95,12): warning C4018: '>': signed/unsigned mismatch
+D:\SDA\Algorytmy\VectorSzablon\VectorSzablon.cpp(94): message : while compiling class template member function 'void VectorS<int>::remove(unsigned int)'
+D:\SDA\Algorytmy\VectorSzablon\main.cpp(50): message : see reference to function template instantiation 'void VectorS<int>::remove(unsigned int)' being compiled
+D:\SDA\Algorytmy\VectorSzablon\VectorSzablon.cpp(159,15): warning C4018: '>': signed/unsigned mismatch
+D:\SDA\Algorytmy\VectorSzablon\VectorSzablon.cpp(158): message : while compiling class template member function 'int &VectorS<int>::operator [](unsigned int)'
+D:\SDA\Algorytmy\VectorSzablon\main.cpp(30): message : see reference to function template instantiation 'int &VectorS<int>::operator [](unsigned int)' being compiled
+  VectorSzablon.vcxproj -> D:\SDA\Algorytmy\ListOneWay\x64\Debug\VectorSzablon.exe
